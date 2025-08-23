@@ -1,4 +1,4 @@
-# Last updated: 8/23/2025, 5:12:27 AM
+# Last updated: 8/23/2025, 5:19:07 AM
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         if len(s) != len(t):
@@ -11,15 +11,14 @@ class Solution:
         
         for ti in t:
             if ti not in hmap or hmap[ti] == 0:
-                return False 
-            
+                return False            
             hmap[ti] -= 1
-            if hmap[ti] == 0:
-                del hmap[ti]
 
-        if len(hmap.keys()) != 0:
-            return False 
-            
+
+        for count in hmap.values():
+            if count != 0:
+                return False
+
         return True
 
 
