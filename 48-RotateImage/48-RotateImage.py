@@ -1,4 +1,4 @@
-# Last updated: 8/23/2025, 11:49:46 PM
+# Last updated: 8/23/2025, 11:54:32 PM
 class Solution:
     def rotate(self, matrix: List[List[int]]) -> None:
         """
@@ -9,7 +9,7 @@ class Solution:
 
         # tranpose along the diagonal 
         for i in range(n):
-            for j in range(i+1//2):
+            for j in range(i):
                 matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
         
         # reverse each row
