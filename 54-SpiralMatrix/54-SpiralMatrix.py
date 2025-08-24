@@ -1,4 +1,4 @@
-# Last updated: 8/23/2025, 11:36:38 PM
+# Last updated: 8/23/2025, 11:38:45 PM
 class Solution:
     def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
         border_top = 0
@@ -19,6 +19,8 @@ class Solution:
                 result.append(matrix[r][border_right])
             border_right -= 1
             
+            # these checks are needed because border_top, 
+            # border_right have been changed
             if (border_top <= border_bottom):
                 for c in range(border_right, border_left-1, -1):
                     result.append(matrix[border_bottom][c])
